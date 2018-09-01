@@ -1,0 +1,12 @@
+#!/bin/bash
+
+;'
+because this hook exists, this script will be run instead of restarting the pkg from the normal channels
+
+the purpose is to change the behavior of the restart
+as the process may just need to be notified to re-read the config file
+
+you can get a handle on the current PID of the running service with the {{pkg.svc_pid_file}} tag
+
+'
+

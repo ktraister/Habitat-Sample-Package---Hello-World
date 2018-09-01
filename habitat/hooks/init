@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#this script will be run when the Habitat Topology starts
+#This could be used to ensure that external dependencies are installed, a config file is in place, etc
+
+echo 'Im the Hello World init hook!'

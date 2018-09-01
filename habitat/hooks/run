@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#this script is needed to start the package correctly from hab infrastructure
+#exec should be used in order to kill this script on exit of the program being called
+
+exec {{ pkg.path }}/bin/hello-world.sh

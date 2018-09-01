@@ -1,0 +1,32 @@
+#!/bin/sh
+ 
+# define default return code as 0
+rc=0
+
+{{ pkg.path }}/bin/hello-world.sh
+
+#if we can't call the program, return a warning code to the supervisor
+
+if [[ $? -ne 0 ]]; then rc=1 ; fi
+
+exit $rc
+
+:'
+https://www.habitat.sh/docs/reference/#health_check
+
+0- ok
+1- warning
+2- critical
+3- unknown
+
+case $? in
+  0)
+    rc=0 ;;
+  3)
+    rc=0 ;;
+  4)
+    rc=2 ;;
+  *)
+    rc=3 ;;
+esac
+'
